@@ -12,3 +12,21 @@ int main(){
         cin>>arr2[i];
     }
     ll max=0;
+    for(ll i=0;i<a;i++)
+    {
+    	for(ll j=0;j<b;j++){
+    		if(arr1[i] + arr2[j] <=s){
+    				if(arr1[i]+arr2[j] > max)	
+    				{
+    					max=arr1[i]+arr2[j];
+					}
+			}
+		}
+	}
+	if(max==0){
+		cout<<"-1"<<endl;
+	}
+	else{
+		cout<<max<<endl;
+	}
+}
