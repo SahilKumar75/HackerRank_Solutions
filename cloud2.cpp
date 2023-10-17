@@ -1,26 +1,21 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
+
+#define FO(i,a,b) for (int i = (a); i < (b); i++)
+#define sz(v) int(v.size())
+
 using namespace std;
 
+int n, k, e;
+int t[105];
 
-int main(){
-int n;
-int k;
-int e = 101;
-cin >> n >> k;
-vector<int> c(n);
-for(int c_i = 0;c_i < n;c_i++){
-   cin >> c[c_i];
-}
-for(int i = n/k; i >= 0; i--){
-    if(c[k*i] == 1){
-        e = e-2;
+int main() {
+    scanf("%d %d", &n, &k); e = 100;
+    FO(i,0,n) scanf("%d", t+i);
+    int i = 0;
+    while (1) {
+        e -= 2*t[i]+1;
+        i = (i+k)%n;
+        if (i == 0) break;
     }
-    e = e-1;
-}
-cout << e;
-return 0;
+    printf("%d\n", e);
 }
