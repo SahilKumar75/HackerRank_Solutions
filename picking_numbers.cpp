@@ -1,30 +1,32 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
+
+int main() {
     int n;
     cin >> n;
-    int a[n];
-    for(int i=0;i<n;i++){
-        cin>>a[i];
+    vector<int> a(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    int max=0,c=0,ele,maxi=0;
-    sort(a,a+n);
-    for(int i=0;i<n;i++){
-    	c=0;
-    	for(int j=i+1;j<n;j++){
-            if(abs(a[i]-a[j])<=1){
-                c++;
-                if(c>maxi){
-				maxi=c;
-			}
+
+    sort(a.begin(), a.end());
+
+    int max_sequence = 0;
+    int current_sequence = 0;
+
+    for (int i = 0; i < n; i++) {
+        current_sequence = 1;
+        for (int j = i + 1; j < n; j++) {
+            if (abs(a[i] - a[j]) <= 1) {
+                current_sequence++;
+            } else {
+                break;
             }
-            else{c=0;
-            	break;
-			}
-		}
-		//cout<<maxi<<endl;
+        }
+        max_sequence = max(max_sequence, current_sequence);
     }
-    cout<<maxi+1<<endl;
+
+    cout << max_sequence << endl;
     return 0;
-    
 }
