@@ -37,12 +37,3 @@ int main()
 				cout<<res;
 				return 0;
 			}
-			else
-			{
-				cout<<"0";
-				return 0;
-			}
-		}
-	}
-	return 0;
-}
