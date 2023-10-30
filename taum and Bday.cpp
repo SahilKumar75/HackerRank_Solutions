@@ -14,5 +14,19 @@ int main() {
         costofw = w * y;
         if (x == y) {
             cout << costofb + costofw << endl;
-
+        } else if (x < y) {
+            if ((x + z) < y) {
+                cout << ((w * x) + (w * z)) + costofb << endl;
+            } else {
+                cout << costofb + costofw << endl;
+            }
+        } else {
+            if ((y + z) < x) {
+                cout << ((b * y) + (b * z)) + costofw << endl;
+            } else {
+                cout << costofb + costofw << endl;
+            }
+        }
+    }
+    return 0;
 }
