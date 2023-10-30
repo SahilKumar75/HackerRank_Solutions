@@ -26,4 +26,25 @@ long long check(long long x) {
     return x;
 }
 
+int main() {
+    long long p, q;
+    cin >> p >> q;
 
+    bool flag = true;
+    for (long long i = p; i <= q; i++) {
+        long long a, b, digit, sq;
+
+        sq = i * i;
+        digit = digitCount(sq);
+        digit -= (digit / 2);
+        a = sq / splitNumber(digit);
+        b = sq % splitNumber(digit);
+        if ((a + b) == i) {
+            cout << i << " ";
+            flag = false;
+        }
+    }
+    if (flag) cout << "INVALID RANGE";
+    cout << endl;
+    return 0;
+}
