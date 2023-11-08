@@ -22,7 +22,14 @@ int main() {
             }
         }
         sort(row, row + n);
-        sort(
+        sort(col, col + n);
+        bool ok = true;
+        for (int i = 0; i < n; i++) {
+            if (row[i] != col[i]) {
+                ok = false;
+                break;
+            }
+        }
         if (ok) {
             cout << "Possible" << endl;
         } else {
